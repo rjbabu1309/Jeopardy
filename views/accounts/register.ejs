@@ -1,0 +1,34 @@
+<%- include('../partials/header.ejs') %>
+<%= errors %>
+<div class="container main">
+    <center>
+        <form action="/register" method="POST">
+            <div class="container">
+              <h2>Sign Up</h2>
+              <p>Please fill in this form to create an account.</p>
+              <hr>
+              <input type="text" placeholder="username" name="username">
+              <!-- <input type="text" placeholder="Full Name" name="Name" class="space form-control" required> -->
+              <input type="text" placeholder="Enter Email" name="email" class="space form-control" required>
+              <!-- <input type="number" placeholder="mobile no." name="mobile" class="space form-control" required> -->
+              <!-- <label style="margin-right: 8.2vh"> Date of Birth: </label> -->
+              <!-- <input type="date" placeholder="DOB" name="dob" id="date" required /> -->
+              <input type="password" placeholder="Enter Password" class="space form-control" name="password" required>
+              <input type="password" placeholder="Confirm Password" class="space form-control" name="confirm-password" required>
+          
+              <!-- <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:1vh"> Remember me
+              </label> -->
+          
+              <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          
+              <div class="clearfix">
+                <button type="submit" class="form-control btn btn-success">Sign Up</button>
+              </div>
+            </div>
+            <a href="/login" >Login</a>
+          </form>
+    </center>
+</div>
+
+<%- include('../partials/footer.ejs') %>

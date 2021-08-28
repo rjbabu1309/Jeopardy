@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <h1>Jeopardy Game Show</h1>
+    <h3 id="user">
+      <%= username%>
+    </h3>
+    <button id="btnCreate">New Game</button>
+    <button id="btnJoin">Join game</button>
+    <input type="text" id="txtGameId">
+
+
+    <div style="display: grid; justify-content: space-around;">
+      <div id="divPlayers"></div>
+    </div>
+
+    <div class="app" id="app">
+
+      <!-- Top section -->
+      <header class="top-header">
+        <!-- <h1>Jeopardy Game Show</h1> -->
+        <p class="score" id="score">Score <span class="score-count" id="score-count"></span></p>
+        <p class="score" id="times">Time <span class="score-count" id="time"></span></p>
+      </header>
+
+      <button type="button" id='start'>Start</button>
+
+      <!-- container for the board -->
+      <div class="board">
+        <!-- categories get injected here -->
+      </div>
+
+      <!-- invisible container for the card prompt -->
+      <div class="card-modal">
+        <div class=card-modal-inner>
+          <h2 class="clue-text">
+            <!-- clue gets injected here -->
+          </h2>
+          <form autocomplete="off">
+            <input name="user-answer" type="text" />
+            <button type="submit">Answer</button>
+          </form>
+          <div class="result">
+            <p class="result_success">CORRECT</p>
+            <p class="result_fail">INCORRECT</p>
+            <p class="result_correct-answer">
+              The correct answer is <span class="result_correct-answer-text">
+                <!--answer gets injected here-->
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+          // HTML elements
+          // let clientId = null;
+          // let gameId = null;
+          // let ws = new WebSocket("ws://localhost:9001/")
+
+
+          // const btnCreate = document.getElementById("btnCreate");
+          // const btnJoin = document.getElementById("btnJoin");
+          // const textGameId = document.getElementById("txtGameId");
+          // const divPlayers = document.getElementById("divPlayers");
+
+
+          // btnJoin.addEventListener("click", e =>{
+          //     if(gameId === null)
+          //         gameId = textGameId.value;
+          //     const payLoad = {
+          //             "method": "join",
+          //             "clientId": clientId,
+          //             "gameId": gameId,
+
+          //         }
+          //         console.log(clientId);
+          //         ws.send(JSON.stringify(payLoad))
+          // })
+
+          // btnCreate.addEventListener("click", e => {
+
+          //         const payLoad = {
+          //             "method": "create",
+          //             "clientId": clientId
+          //         }
+          //         ws.send(JSON.stringify(payLoad))
+          // })
+
+          // ws.onmessage = message => {
+          //     //message.data
+          //     const response = JSON.parse(message.data);
+          //     //connect
+          //     if(response.method === "connect"){
+          //         clientId = response.clientId;
+          //         console.log("Client id Set successfully"+clientId);
+          //     }
+          //     if(response.method === "create"){
+          //         gameId = response.game.id;
+          //         console.log("game successfully created with id" + response.game.id + " with "+ response.game.balls+" balls");
+          //     }
+          //     if(response.method === "join"){
+          //         gameId = response.game.id;
+
+          //         const game = response.game;
+
+          //         while(divPlayers.firstChild){
+          //             divPlayers.removeChild(divPlayers.firstChild)
+          //         }
+          //         game.clients.forEach(c => {
+
+          //             const d = document.createElement("div");
+          //             d.style.width = "300px";
+          //             d.style.margin = "20px";
+          //             d.style.backgroundColor = c.color;
+          //             d.style.float = "left";
+
+          //             d.textContent = c.clientId + "has been joined";
+          //             divPlayers.appendChild(d);
+          //         });
+          //     }
+          // }
+    </script>
+    <script src="/js/eventEmitter.js"></script>
+    <script src="/js/init.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/main.js"></script>
+  </body>

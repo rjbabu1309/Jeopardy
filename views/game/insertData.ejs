@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/insert" method="post">
+        <input type="text" name="clue" placeholder="Clue..."><br>
+        <input type="text" name="ans" placeholder="Answer..."><br>
+        <label for="cars">Choose level of the Clue:</label>
+        <select name="val" id="val">
+            <% for(var i=100; i<=500; i=i+100) { 
+            %>
+                <option value=<%=i%> >
+                    <%= i %>
+                </option>
+            <% } %>
+        </select><br>
+        <select name="category" id="category">
+            <option value="Editorial">Editorial</option>
+            <option value="Sport">Sport</option>
+            <option value="Trailers">Trailers</option>
+            <option value="Technology">Technology</option>
+        </select><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

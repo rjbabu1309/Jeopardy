@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "jeopardy",
+    "password": "Raja@@5656",
+    "database": "project",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "jeopardy",
+    "password": "Raja@@5656",
+    "database": "project",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "jeopardy",
+    "password": "Raja@@5656",
+    "database": "project",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+
+<center>
+	<% if(!username) {%>
+	Welcome to jeopardy Game! please Login to start.
+	<%} else{%>
+	<ul id='messages'></ul>
+	<h1>Welcome <%= username %></h1>
+	<%}%>
+	
+    <% if(loggedIn) {%>
+		<a href="/logout">Logout</a>
+		<%}else{ %>
+	<a href="/login">Login</a>
+	<a href="/register">Register</a>
+	<%}%>
+	
+</center>
+
+<%- include('partials/footer.ejs') %>
