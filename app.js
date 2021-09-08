@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 app.use(session({
 
     // It holds the secret key for session
-    secret: 'Your_Secret_Key',
+    secret: 'TheSecret',
 
     // Forces the session to be saved
     // back to the session store
