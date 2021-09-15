@@ -4,12 +4,12 @@ class JeopardyGameShow {
 		//Which categories we should use (or use default is nothing provided)
 		this.useCategoryIds = options.useCategoryIds || [42, 348, 14051, 428];
 		/*
-		   Default Categories pulled from https://jservice.io/search:
 		   ---
 		   42: Sports
 		   348: technology
 		   14051: movie trailer
 		   428: in the news
+		   ---
 		*/
 
 		//Database
@@ -146,7 +146,7 @@ class JeopardyGameShow {
 	}
 
 	handleClueClick = (event) => {
-		console.log("2****", this.disableAction);
+		// console.log("2****", this.disableAction);
 
 		if (!this.disableAction) {
 			alert("It's not your turn.");
@@ -220,11 +220,7 @@ class JeopardyGameShow {
 
 
 
-//Utils -----------------------------------
-/**https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-* Shuffles array in place.
-* @param {Array} a items An array containing the items.
-*/
+
 function shuffle(a) {
 	var j, x, i;
 	for (i = a.length - 1; i > 0; i--) {
@@ -234,7 +230,7 @@ function shuffle(a) {
 		a[j] = x;
 	}
 	return a;
-} //https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+} 
 
 //-------------------------------------------
 // const app = document.querySelector(".app");
@@ -242,11 +238,3 @@ const app = document.getElementById("app");
 
 const game = new JeopardyGameShow(app, {});
 game.initGame();
-
-
-/* BONUS CHALLENGES - cool enhancements */
-  //1. Change answer logic to be in question format. "What is a... ___answer___"
-  //2. Query value based on API response, not our own random ordering
-  //3. Multiplayer scores!
-  //4. Make your own categories and clues
-  // export {JeopardyGameShow};
